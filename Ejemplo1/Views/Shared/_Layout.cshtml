@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link hrefs="~/css/sitio.css" rel"stylesheeet"/>
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/twitter-bootstrap/js/bootstrap.js"></script>
+    <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <environment include="Development">
+        <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+    </environment>
+        
+
+    <environment exclude="developmnet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XnFcJlSAwinGgFAM/dAiS6JXm"
+        crossorigin="anonymus"
+        asp-fallback-href="~/lib/twitter-bootstrap/css/bootstrap.css"
+        asp-fallback-test-class="sr-only"
+        asp-fallback-test-property="position"
+        asp-fallback-test-value="absolute"
+        asp-suppress-fallback-integrity="true"/>
+    </environment>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    
+    <div class="container">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                <img src="~/images/usuarios.jpg" width="30" height="30" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Home" asp-action="Index">Listado</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Home" asp-action="Create">Crear</a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
+        <div>
+            @RenderBody()
+        </div>
+
+        @RenderSection("Scripts", required: false)
+    </div>
+
+
+   
+
+
+</body>
+</html>

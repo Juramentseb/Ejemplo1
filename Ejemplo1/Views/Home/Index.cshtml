@@ -1,0 +1,56 @@
+﻿@model List<Amigo>
+
+@{
+
+    ViewBag.Title = "Amigos Lista";
+
+} 
+
+
+<div class="card-deck">
+    @foreach (var amigo in Model)
+    {
+    <div class="card m-3">
+        <div class="card-header">
+            <h3>@amigo.Nombre</h3>
+        </div>
+
+        <img class="card-img-top" src="~/images/prueba.jpg" />
+        <div class="card-footer  text-center">
+            <a class="btn btn-primary" asp-controller="home" asp-action="details" asp-route-id="@amigo.Id">Ver</a>
+            <a href="#" class="btn btn-primary">Editar</a>
+            <a href="#" class="btn btn-danger">Borrar</a>
+        </div>
+    </div>
+    }
+    </div>
+
+
+
+
+@*<br>
+<br>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Ciudad</th>
+    </tr>
+    <tr>
+        @foreach (var amigo in Model)
+        {
+
+        <tr>
+            <td>@amigo.id</td>
+            <td>@amigo.nombre</td>
+            <td>@amigo.email</td>
+            <td>@amigo.ciudad</td>
+        </tr>
+    }
+        </tr>
+    </table>*@
+
+
+
+
